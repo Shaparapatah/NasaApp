@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.shaparapatah.nasaapp.BuildConfig
-import com.shaparapatah.nasaapp.repository.PODServerResponseData
 import com.shaparapatah.nasaapp.repository.PODRetrofitImpl
+import com.shaparapatah.nasaapp.repository.PODServerResponseData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
