@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp
+package com.shaparapatah.nasaapp.view
 
 import android.content.Intent
 import android.net.Uri
@@ -13,7 +13,11 @@ import androidx.lifecycle.ViewModelProviders
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.shaparapatah.nasaapp.databinding.FragmentMainBinding
+import com.shaparapatah.nasaapp.ui.BottomNavigationDrawerFragment
+import com.shaparapatah.nasaapp.ui.ChipsFragment
+import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayData
+import com.shaparapatah.nasaapp.R
+import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayViewModel
 import kotlinx.android.synthetic.main.fragment_main.*
 
 

@@ -1,7 +1,8 @@
-package com.shaparapatah.nasaapp
+package com.shaparapatah.nasaapp.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.shaparapatah.nasaapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

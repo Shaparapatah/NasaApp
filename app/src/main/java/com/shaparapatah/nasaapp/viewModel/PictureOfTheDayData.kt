@@ -1,4 +1,6 @@
-package com.shaparapatah.nasaapp
+package com.shaparapatah.nasaapp.viewModel
+
+import com.shaparapatah.nasaapp.repository.PODServerResponseData
 
 sealed class PictureOfTheDayData {
         data class Success(val serverResponseData: PODServerResponseData) : PictureOfTheDayData()

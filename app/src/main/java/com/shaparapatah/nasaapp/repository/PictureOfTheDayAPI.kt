@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp
+package com.shaparapatah.nasaapp.repository
 
 import retrofit2.Call
 import retrofit2.http.GET

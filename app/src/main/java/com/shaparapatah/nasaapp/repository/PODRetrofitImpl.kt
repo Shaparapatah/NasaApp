@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp
+package com.shaparapatah.nasaapp.repository
 
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
