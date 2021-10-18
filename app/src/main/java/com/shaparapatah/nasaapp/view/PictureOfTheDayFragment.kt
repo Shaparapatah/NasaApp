@@ -85,26 +85,28 @@ class PictureOfTheDayFragment : Fragment() {
     private fun renderData(data: PictureOfTheDayData) {
         when (data) {
             is PictureOfTheDayData.Success -> {
+
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
-                    //showError("Сообщение, что ссылка пустая")
                     toast("Link is empty")
                 } else {
-                    //showSuccess()
-                    //   binding.imageView.load(url) {
                     image_view.load(url) {
                         lifecycle(this@PictureOfTheDayFragment)
                         error(R.drawable.ic_load_error_vector)
                         placeholder(R.drawable.ic_no_photo_vector)
                     }
                 }
+                loadingLayout.visibility = View.INVISIBLE
+                main.visibility = View.VISIBLE
+
             }
             is PictureOfTheDayData.Loading -> {
-                //showLoading()
+                loadingLayout.visibility = View.VISIBLE
+                main.visibility = View.INVISIBLE
+
             }
             is PictureOfTheDayData.Error -> {
-                //showError(data.error.message)
                 toast(data.error.message)
             }
         }
@@ -148,5 +150,4 @@ class PictureOfTheDayFragment : Fragment() {
         fun newInstance() = PictureOfTheDayFragment()
         private var isMain = true
     }
-
 }
