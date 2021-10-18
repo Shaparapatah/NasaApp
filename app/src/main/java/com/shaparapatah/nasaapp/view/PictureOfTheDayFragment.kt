@@ -13,11 +13,13 @@ import androidx.lifecycle.ViewModelProviders
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.chip.Chip
 import com.shaparapatah.nasaapp.R
 import com.shaparapatah.nasaapp.ui.BottomNavigationDrawerFragment
 import com.shaparapatah.nasaapp.ui.ChipsFragment
 import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayData
 import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayViewModel
+import kotlinx.android.synthetic.main.fragment_chips.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
@@ -54,6 +56,11 @@ class PictureOfTheDayFragment : Fragment() {
         setBottomAppBar(view)
 
 
+        chipGroupMainFragment.setOnCheckedChangeListener { chipGroupMainFragment, position ->
+            chipGroupMainFragment.findViewById<Chip>(position)?.let {
+                Toast.makeText(context, "Выбран ${it.text}", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
