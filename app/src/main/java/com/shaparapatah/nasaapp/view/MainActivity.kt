@@ -7,6 +7,7 @@ import com.shaparapatah.nasaapp.R
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(App.instance.currentTheme)
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -14,4 +15,12 @@ class MainActivity : AppCompatActivity() {
                 .commitNow()
         }
     }
+
+    fun changeTheme(theme: Int) {
+        App.instance.currentTheme = theme
+        this.recreate()
+    }
 }
+
+
+

@@ -26,7 +26,6 @@ import kotlinx.android.synthetic.main.fragment_main.*
 class PictureOfTheDayFragment : Fragment() {
 
 
-
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private val viewModel: PictureOfTheDayViewModel by lazy {
         ViewModelProviders.of(this).get(PictureOfTheDayViewModel::class.java)
@@ -74,9 +73,14 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> toast("Favourite")
-            R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()
-                ?.add(R.id.container, ChipsFragment())?.addToBackStack(null)?.commit()
+            R.id.app_bar_fav -> {
+                (activity as? MainActivity)?.changeTheme(R.style.MyCoolStyle1)
+            }
+            R.id.app_bar_settings -> {
+                (activity as? MainActivity)?.changeTheme(R.style.MyCoolStyle2)
+                toast("Favourite 2 ")
+//                activity?.supportFragmentManager?.beginTransaction()?.add(R.id.container, SettingsFragment())?.addToBackStack(null)?.commit()
+            }
             android.R.id.home -> {
                 activity?.let {
                     BottomNavigationDrawerFragment().show(it.supportFragmentManager, "tag")
@@ -153,5 +157,6 @@ class PictureOfTheDayFragment : Fragment() {
     companion object {
         fun newInstance() = PictureOfTheDayFragment()
         private var isMain = true
+
     }
 }
