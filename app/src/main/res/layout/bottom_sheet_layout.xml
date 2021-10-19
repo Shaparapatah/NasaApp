@@ -6,30 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f6f6fa"
+    android:visibility="gone"
     app:behavior_hideable="true"
     app:behavior_peekHeight="50dp"
-    android:visibility="gone"
-    tools:visibility="visible"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    tools:visibility="visible">
 
     <View
         android:id="@+id/bottom_sheet_line"
-        android:layout_width="25dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:background="#663b4351"
+        style="@style/feature_name_1_bottom_sheet_line_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/bottom_sheet_description_header"
+        style="feature_name_1_bottom_sheet_description_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:textColor="#000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,10 +32,9 @@
 
     <TextView
         android:id="@+id/bottom_sheet_description"
+        style="feature_name_1_bottom_sheet_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottom_sheet_description_header"
