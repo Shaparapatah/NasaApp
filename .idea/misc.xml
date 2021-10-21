@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable-v24/ic_hamburger_menu_bottom_bar.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable-v24/ic_no_photo_vector.xml" value="0.20555555555555555" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic__98790_globe_icon.xml" value="0.20555555555555555" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/swipe_indicator_active.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.18333333333333332" />
@@ -16,7 +17,7 @@
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/bottom_navigation_layout.xml" value="0.16574074074074074" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.25" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/fragment_chips.xml" value="0.25" />
-        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/fragment_earth.xml" value="0.18" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/fragment_earth.xml" value="0.5" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/fragment_main.xml" value="0.22" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/fragment_mars.xml" value="0.14074074074074075" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/fragment_weather.xml" value="0.14074074074074075" />

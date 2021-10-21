@@ -27,4 +27,8 @@ class ViewPagerAdapter(private val fragmentManager: FragmentManager) :
             else -> fragments[EARTH_FRAGMENT]
         }
     }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return null
+    }
 }
