@@ -1,23 +1,16 @@
 package com.shaparapatah.nasaapp.api
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.shaparapatah.nasaapp.R
+import kotlinx.android.synthetic.main.api_activity.*
 
-class ApiActivity : Fragment() {
+class ApiActivity : AppCompatActivity() {
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.api_activity, container, false)
-    }
-
-    companion object {
-        fun newInstance() = ApiActivity()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.api_activity)
+        view_pager.adapter = ViewPagerAdapter(supportFragmentManager)
     }
 }
