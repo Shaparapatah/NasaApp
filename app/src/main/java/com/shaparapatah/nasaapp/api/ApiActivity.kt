@@ -22,9 +22,7 @@ class ApiActivity : AppCompatActivity() {
         setContentView(R.layout.api_activity)
         view_pager.adapter = ViewPagerAdapter(supportFragmentManager)
         tab_layout.setupWithViewPager(view_pager)
-        tab_layout.getTabAt(0)?.setIcon(R.drawable.ic_earth)
-        tab_layout.getTabAt(1)?.setIcon(R.drawable.ic_mars)
-        tab_layout.getTabAt(2)?.setIcon(R.drawable.ic_weather)
+        setHighlightedTab(EARTH)
 
         view_pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrolled(
