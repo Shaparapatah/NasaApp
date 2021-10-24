@@ -16,6 +16,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.chip.Chip
 import com.shaparapatah.nasaapp.MainActivity
 import com.shaparapatah.nasaapp.R
+import com.shaparapatah.nasaapp.api.ApiActivity
 import com.shaparapatah.nasaapp.api.ApiBottomActivity
 import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayData
 import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayViewModel
@@ -73,7 +74,7 @@ class PictureOfTheDayFragment : Fragment() {
                 startActivity(
                     Intent(
                         it,
-                        ApiBottomActivity::class.java
+                        ApiActivity::class.java
                     )
                 )
             }
