@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.view
+package com.shaparapatah.nasaapp.api
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -10,9 +10,12 @@ class ApiBottomActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_api_bottom)
-        val badge = bottom_navigation_view.getOrCreateBadge(R.id.bottom_view_earth)
-        badge?.maxCharacterCount = 3
-        badge?.number= 388
+        initBadge()
+        changeFragments()
+
+    }
+
+    private fun changeFragments() {
         bottom_navigation_view.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_view_earth -> {
@@ -37,5 +40,14 @@ class ApiBottomActivity : AppCompatActivity() {
             }
         }
         bottom_navigation_view.selectedItemId = R.id.bottom_view_earth
+
+
     }
+
+    private fun initBadge() {
+        val badge = bottom_navigation_view.getOrCreateBadge(R.id.bottom_view_earth)
+        badge.maxCharacterCount = 3
+        badge.number = 388
+    }
+
 }

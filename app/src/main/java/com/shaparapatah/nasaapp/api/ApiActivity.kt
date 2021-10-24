@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.view
+package com.shaparapatah.nasaapp.api
 
 import android.os.Bundle
 import android.view.LayoutInflater
