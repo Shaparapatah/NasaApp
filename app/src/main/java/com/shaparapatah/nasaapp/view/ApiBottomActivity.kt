@@ -10,6 +10,9 @@ class ApiBottomActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_api_bottom)
+        val badge = bottom_navigation_view.getOrCreateBadge(R.id.bottom_view_earth)
+        badge?.maxCharacterCount = 3
+        badge?.number= 388
         bottom_navigation_view.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_view_earth -> {
