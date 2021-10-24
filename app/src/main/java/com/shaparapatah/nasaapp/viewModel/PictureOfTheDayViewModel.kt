@@ -66,8 +66,7 @@ class PictureOfTheDayViewModel(
             response: Response<List<SolarFlareResponseData>>
         ) {
             if (response.isSuccessful && response.body() != null) {
-                liveDataForViewToObserve.value =
-                    PictureOfTheDayData.Success(response.body() as PODServerResponseData)
+
             } else {
                 val message = response.message()
                 if (message.isNullOrEmpty()) {
