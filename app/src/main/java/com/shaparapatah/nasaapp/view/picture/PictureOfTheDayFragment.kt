@@ -77,6 +77,15 @@ class PictureOfTheDayFragment : Fragment() {
                     )
                 )
             }
+
+            R.id.app_bar_change_style -> activity?.let {
+                startActivity(
+                    Intent(
+                        it,
+                        ApiBottomActivity::class.java
+                    )
+                )
+            }
             R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()
                 ?.add(R.id.container, ChipsFragment())?.addToBackStack(null)?.commit()
             android.R.id.home -> {
