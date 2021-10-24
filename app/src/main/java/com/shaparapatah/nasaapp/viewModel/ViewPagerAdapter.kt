@@ -1,8 +1,11 @@
-package com.shaparapatah.nasaapp.api
+package com.shaparapatah.nasaapp.viewModel
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
+import com.shaparapatah.nasaapp.view.EarthFragment
+import com.shaparapatah.nasaapp.view.MarsFragment
+import com.shaparapatah.nasaapp.view.WeatherFragment
 
 private const val EARTH_FRAGMENT = 0
 private const val MARS_FRAGMENT = 1

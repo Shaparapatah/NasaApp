@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.api
+package com.shaparapatah.nasaapp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import com.shaparapatah.nasaapp.R
+import com.shaparapatah.nasaapp.viewModel.ViewPagerAdapter
 import kotlinx.android.synthetic.main.api_activity.*
 
 private const val EARTH = 0
