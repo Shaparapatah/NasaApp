@@ -13,13 +13,12 @@ import androidx.lifecycle.ViewModelProviders
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.chip.Chip
 import com.shaparapatah.nasaapp.MainActivity
 import com.shaparapatah.nasaapp.R
 import com.shaparapatah.nasaapp.api.ApiActivity
 import com.shaparapatah.nasaapp.api.ApiBottomActivity
 import com.shaparapatah.nasaapp.api.CoordinatorLayout
-import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayData
+import com.shaparapatah.nasaapp.viewModel.AppState
 import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayViewModel
 import kotlinx.android.synthetic.main.fragment_chips.*
 import kotlinx.android.synthetic.main.fragment_main.*
@@ -36,7 +35,7 @@ class PictureOfTheDayFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.getData()
-            .observe(viewLifecycleOwner, Observer<PictureOfTheDayData> { renderData(it) })
+            .observe(viewLifecycleOwner, Observer<AppState> { renderData(it) })
     }
 
     override fun onCreateView(
@@ -56,12 +55,6 @@ class PictureOfTheDayFragment : Fragment() {
         }
         setBottomAppBar(view)
 
-
-        chipGroupMainFragment.setOnCheckedChangeListener { chipGroupMainFragment, position ->
-            chipGroupMainFragment.findViewById<Chip>(position)?.let {
-                Toast.makeText(context, "Выбран ${it.text}", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -108,9 +101,9 @@ class PictureOfTheDayFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun renderData(data: PictureOfTheDayData) {
+    private fun renderData(data: AppState) {
         when (data) {
-            is PictureOfTheDayData.Success -> {
+            is AppState.Success -> {
 
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
@@ -127,12 +120,12 @@ class PictureOfTheDayFragment : Fragment() {
                 main.visibility = View.VISIBLE
 
             }
-            is PictureOfTheDayData.Loading -> {
+            is AppState.Loading -> {
                 loadingLayout.visibility = View.VISIBLE
                 main.visibility = View.INVISIBLE
 
             }
-            is PictureOfTheDayData.Error -> {
+            is AppState.Error -> {
                 toast(data.error.message)
             }
         }
