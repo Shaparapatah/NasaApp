@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".api.ApiActivity" />
         <activity android:name=".api.ApiBottomActivity" />
+        <activity android:name=".api.CoordinatorLayout" />
 
 
     </application>

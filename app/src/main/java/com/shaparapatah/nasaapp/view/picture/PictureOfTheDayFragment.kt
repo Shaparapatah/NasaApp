@@ -18,6 +18,7 @@ import com.shaparapatah.nasaapp.MainActivity
 import com.shaparapatah.nasaapp.R
 import com.shaparapatah.nasaapp.api.ApiActivity
 import com.shaparapatah.nasaapp.api.ApiBottomActivity
+import com.shaparapatah.nasaapp.api.CoordinatorLayout
 import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayData
 import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayViewModel
 import kotlinx.android.synthetic.main.fragment_chips.*
@@ -84,6 +85,15 @@ class PictureOfTheDayFragment : Fragment() {
                     Intent(
                         it,
                         ApiBottomActivity::class.java
+                    )
+                )
+            }
+
+            R.id.app_bar_coordinator_layout -> activity?.let {
+                startActivity(
+                    Intent(
+                        it,
+                        CoordinatorLayout::class.java
                     )
                 )
             }

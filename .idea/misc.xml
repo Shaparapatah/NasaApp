@@ -10,6 +10,8 @@
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic__98790_globe_icon.xml" value="0.20555555555555555" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic__show_fragments.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic_solar.xml" value="0.18981481481481483" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic_weather.xml" value="0.18981481481481483" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/swipe_indicator_active.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/font/font.xml" value="0.19074074074074074" />
@@ -31,7 +33,7 @@
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/fragment_weather.xml" value="0.14074074074074075" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/main_activity.xml" value="0.14814814814814814" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/menu/menu.xml" value="0.16574074074074074" />
-        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/menu/menu_bottom_bar.xml" value="0.16574074074074074" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/menu/menu_bottom_bar.xml" value="0.33" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/menu/menu_bottom_bar_other_screen.xml" value="0.1685185185185185" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.1685185185185185" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/menu/menu_bottom_navigation_view.xml" value="0.14444444444444443" />
