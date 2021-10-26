@@ -14,7 +14,7 @@ import com.shaparapatah.nasaapp.R
 import com.shaparapatah.nasaapp.viewModel.AppState
 import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayViewModel
 import kotlinx.android.synthetic.main.fragment_main.*
-
+/*
 class CoordinatorFragment : Fragment() {
 
     private val viewModel: PictureOfTheDayViewModel by lazy {
@@ -83,3 +83,5 @@ class CoordinatorFragment : Fragment() {
     }
 
 }
+
+ */
