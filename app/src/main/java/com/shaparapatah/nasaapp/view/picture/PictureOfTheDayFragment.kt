@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.view
+package com.shaparapatah.nasaapp.view.picture
 
 import android.content.Intent
 import android.net.Uri
@@ -13,18 +13,18 @@ import androidx.lifecycle.ViewModelProviders
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.chip.Chip
+import com.shaparapatah.nasaapp.MainActivity
 import com.shaparapatah.nasaapp.R
-import com.shaparapatah.nasaapp.ui.BottomNavigationDrawerFragment
-import com.shaparapatah.nasaapp.ui.ChipsFragment
-import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayData
+import com.shaparapatah.nasaapp.api.ApiActivity
+import com.shaparapatah.nasaapp.api.ApiBottomActivity
+import com.shaparapatah.nasaapp.api.CoordinatorLayout
+import com.shaparapatah.nasaapp.viewModel.AppState
 import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayViewModel
 import kotlinx.android.synthetic.main.fragment_chips.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
 
 class PictureOfTheDayFragment : Fragment() {
-
 
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
@@ -35,14 +35,15 @@ class PictureOfTheDayFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.getData()
-            .observe(viewLifecycleOwner, Observer<PictureOfTheDayData> { renderData(it) })
+            .observe(viewLifecycleOwner, Observer<AppState> { renderData(it) })
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+         //return inflater.inflate(R.layout.fragment_main, container, false)
+       return inflater.inflate(R.layout.fragment_main_start, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,12 +56,6 @@ class PictureOfTheDayFragment : Fragment() {
         }
         setBottomAppBar(view)
 
-
-        chipGroupMainFragment.setOnCheckedChangeListener { chipGroupMainFragment, position ->
-            chipGroupMainFragment.findViewById<Chip>(position)?.let {
-                Toast.makeText(context, "Выбран ${it.text}", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -70,7 +65,32 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> toast("Favourite")
+            R.id.app_bar_fav -> activity?.let {
+                startActivity(
+                    Intent(
+                        it,
+                        ApiActivity::class.java
+                    )
+                )
+            }
+
+            R.id.app_bar_change_style -> activity?.let {
+                startActivity(
+                    Intent(
+                        it,
+                        ApiBottomActivity::class.java
+                    )
+                )
+            }
+
+            R.id.app_bar_coordinator_layout -> activity?.let {
+                startActivity(
+                    Intent(
+                        it,
+                        CoordinatorLayout::class.java
+                    )
+                )
+            }
             R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()
                 ?.add(R.id.container, ChipsFragment())?.addToBackStack(null)?.commit()
             android.R.id.home -> {
@@ -82,13 +102,13 @@ class PictureOfTheDayFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun renderData(data: PictureOfTheDayData) {
+    private fun renderData(data: AppState) {
         when (data) {
-            is PictureOfTheDayData.Success -> {
+            is AppState.Success -> {
 
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
-                if (url.isNullOrEmpty()) {
+               if (url.isNullOrEmpty()) {
                     toast("Link is empty")
                 } else {
                     image_view.load(url) {
@@ -97,20 +117,22 @@ class PictureOfTheDayFragment : Fragment() {
                         placeholder(R.drawable.ic_no_photo_vector)
                     }
                 }
-                loadingLayout.visibility = View.INVISIBLE
-                main.visibility = View.VISIBLE
+//                loadingLayout.visibility = View.INVISIBLE
+//                main.visibility = View.VISIBLE
 
             }
-            is PictureOfTheDayData.Loading -> {
-                loadingLayout.visibility = View.VISIBLE
-                main.visibility = View.INVISIBLE
+            is AppState.Loading -> {
+//               loadingLayout.visibility = View.VISIBLE
+//                main.visibility = View.INVISIBLE
 
             }
-            is PictureOfTheDayData.Error -> {
+            is AppState.Error -> {
                 toast(data.error.message)
             }
         }
     }
+
+
 
     private fun setBottomAppBar(view: View) {
         val context = activity as MainActivity
