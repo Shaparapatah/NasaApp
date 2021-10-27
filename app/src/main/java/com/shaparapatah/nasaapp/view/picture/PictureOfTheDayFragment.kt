@@ -42,7 +42,8 @@ class PictureOfTheDayFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+         //return inflater.inflate(R.layout.fragment_main, container, false)
+       return inflater.inflate(R.layout.fragment_main_start, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -107,7 +108,7 @@ class PictureOfTheDayFragment : Fragment() {
 
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
-                if (url.isNullOrEmpty()) {
+               if (url.isNullOrEmpty()) {
                     toast("Link is empty")
                 } else {
                     image_view.load(url) {
@@ -116,13 +117,13 @@ class PictureOfTheDayFragment : Fragment() {
                         placeholder(R.drawable.ic_no_photo_vector)
                     }
                 }
-                loadingLayout.visibility = View.INVISIBLE
-                main.visibility = View.VISIBLE
+//                loadingLayout.visibility = View.INVISIBLE
+//                main.visibility = View.VISIBLE
 
             }
             is AppState.Loading -> {
-                loadingLayout.visibility = View.VISIBLE
-                main.visibility = View.INVISIBLE
+//               loadingLayout.visibility = View.VISIBLE
+//                main.visibility = View.INVISIBLE
 
             }
             is AppState.Error -> {
@@ -130,6 +131,8 @@ class PictureOfTheDayFragment : Fragment() {
             }
         }
     }
+
+
 
     private fun setBottomAppBar(view: View) {
         val context = activity as MainActivity
