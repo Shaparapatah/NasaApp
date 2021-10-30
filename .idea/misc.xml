@@ -7,6 +7,7 @@
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable-v24/ic_load_error_vector.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable-v24/ic_no_photo_vector.xml" value="0.20555555555555555" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable-v24/ic_settings_menu.xml" value="0.18703703703703703" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/earth_planet_icon.xml" value="0.26481481481481484" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic__98790_globe_icon.xml" value="0.20555555555555555" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic__show_fragments.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.20833333333333334" />
@@ -20,6 +21,7 @@
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/activity_animation.xml" value="0.2222222222222222" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/activity_animation_explode.xml" value="0.2222222222222222" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/activity_animations_enlarge.xml" value="0.2222222222222222" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/activity_animations_fab.xml" value="0.2222222222222222" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/activity_animations_path_transitions.xml" value="0.2222222222222222" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/activity_animations_shuffle.xml" value="0.25" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/NasaApp/app/src/main/res/layout/activity_api_bottom.xml" value="0.14444444444444443" />
