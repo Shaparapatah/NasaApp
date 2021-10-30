@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NasaApp">
         <activity
-            android:name=".view.animations.AnimationFAB"
+            android:name=".view.animations.AnimationsActivityBonus"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +28,7 @@
         <activity android:name=".view.animations.ImageTransformActivity" />
         <activity android:name=".view.animations.AnimationsPath"/>
         <activity android:name=".view.animations.AnimationShuffle"/>
+        <activity android:name=".view.animations.AnimationFAB"/>
 
 
     </application>
