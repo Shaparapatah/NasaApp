@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.viewModel
+package com.shaparapatah.nasaapp.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

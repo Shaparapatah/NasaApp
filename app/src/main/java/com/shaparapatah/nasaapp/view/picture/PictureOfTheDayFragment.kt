@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.view.view
+package com.shaparapatah.nasaapp.view.picture
 
 import android.content.Intent
 import android.net.Uri
@@ -18,8 +18,8 @@ import com.shaparapatah.nasaapp.R
 import com.shaparapatah.nasaapp.api.ApiActivity
 import com.shaparapatah.nasaapp.api.ApiBottomActivity
 import com.shaparapatah.nasaapp.api.CoordinatorLayout
-import com.shaparapatah.nasaapp.viewModel.AppState
-import com.shaparapatah.nasaapp.viewModel.PictureOfTheDayViewModel
+import com.shaparapatah.nasaapp.viewmodel.AppState
+import com.shaparapatah.nasaapp.viewmodel.PictureOfTheDayViewModel
 import kotlinx.android.synthetic.main.fragment_chips.*
 import kotlinx.android.synthetic.main.fragment_main.*
 

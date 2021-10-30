@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import com.shaparapatah.nasaapp.R
-import com.shaparapatah.nasaapp.viewModel.ViewPagerAdapter
+import com.shaparapatah.nasaapp.viewmodel.ViewPagerAdapter
 import kotlinx.android.synthetic.main.api_activity.*
 
 private const val EARTH = 0

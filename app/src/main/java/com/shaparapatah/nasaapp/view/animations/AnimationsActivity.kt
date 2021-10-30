@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.api
+package com.shaparapatah.nasaapp.view.animations
 
 import android.graphics.Rect
 import android.os.Bundle
@@ -31,6 +31,15 @@ class AnimationsActivity : AppCompatActivity() {
                 return viewRect
             }
         }
+        animationFadePlusExplode(explode, clickedView)
+
+
+    }
+
+    private fun animationFadePlusExplode(
+        explode: Explode,
+        clickedView: View
+    ) {
         explode.excludeTarget(clickedView, true)
         val set = TransitionSet()
             .addTransition(explode)
@@ -43,8 +52,6 @@ class AnimationsActivity : AppCompatActivity() {
             })
         TransitionManager.beginDelayedTransition(recycler_view, set)
         recycler_view.adapter = null
-
-
     }
 
     inner class Adapter : RecyclerView.Adapter<ViewHolder>() {

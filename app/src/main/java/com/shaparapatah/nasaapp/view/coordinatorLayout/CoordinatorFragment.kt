@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.view.view
+package com.shaparapatah.nasaapp.view.coordinatorLayout
 
 /*
 class CoordinatorFragment : Fragment() {

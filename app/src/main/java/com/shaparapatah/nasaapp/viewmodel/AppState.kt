@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.viewModel
+package com.shaparapatah.nasaapp.viewmodel
 
 import com.shaparapatah.nasaapp.repository.PODServerResponseData
 import com.shaparapatah.nasaapp.repository.SolarFlareResponseData
