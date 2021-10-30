@@ -1,4 +1,4 @@
-package com.shaparapatah.nasaapp.view.picture
+package com.shaparapatah.nasaapp.view.view
 
 import android.content.Intent
 import android.net.Uri

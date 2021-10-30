@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NasaApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".api.AnimationsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +23,7 @@
         <activity android:name=".api.ApiActivity" />
         <activity android:name=".api.ApiBottomActivity" />
         <activity android:name=".api.CoordinatorLayout" />
+        <activity android:name=".MainActivity"/>
 
 
     </application>
