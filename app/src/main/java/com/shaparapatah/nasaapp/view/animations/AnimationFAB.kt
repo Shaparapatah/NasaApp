@@ -5,9 +5,11 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import com.shaparapatah.nasaapp.R
 import kotlinx.android.synthetic.main.activity_animations_fab.*
+import kotlinx.android.synthetic.main.coordinator_layout.*
 
 class AnimationFAB : AppCompatActivity() {
 
@@ -17,7 +19,10 @@ class AnimationFAB : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animations_fab)
         setFAB()
+        scroll_view.setOnScrollChangeListener { _, _, _, _, _ -> }
+        header.isSelected = scroll_view.canScrollVertically(-1)
     }
+
 
     private fun setFAB() {
         setInitialState()
@@ -115,6 +120,8 @@ class AnimationFAB : AppCompatActivity() {
                 }
             })
     }
+
+
 }
 
 
