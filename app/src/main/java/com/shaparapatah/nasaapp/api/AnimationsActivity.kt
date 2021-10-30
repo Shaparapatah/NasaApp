@@ -2,9 +2,7 @@ package com.shaparapatah.nasaapp.api
 
 import android.graphics.Rect
 import android.os.Bundle
-import android.transition.Explode
-import android.transition.Transition
-import android.transition.TransitionManager
+import android.transition.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,9 +31,20 @@ class AnimationsActivity : AppCompatActivity() {
                 return viewRect
             }
         }
-        explode.duration = 1000
-        TransitionManager.beginDelayedTransition(recycler_view, explode)
+        explode.excludeTarget(clickedView, true)
+        val set = TransitionSet()
+            .addTransition(explode)
+            .addTransition(Fade().addTarget(clickedView))
+            .addListener(object : TransitionListenerAdapter() {
+                override fun onTransitionEnd(transition: Transition?) {
+                    transition?.removeListener(this)
+                    onBackPressed()
+                }
+            })
+        TransitionManager.beginDelayedTransition(recycler_view, set)
         recycler_view.adapter = null
+
+
     }
 
     inner class Adapter : RecyclerView.Adapter<ViewHolder>() {
