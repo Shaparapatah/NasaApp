@@ -3,7 +3,12 @@ package com.shaparapatah.nasaapp.view.picture
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.transition.ChangeBounds
+import android.transition.ChangeImageTransform
+import android.transition.TransitionManager
+import android.transition.TransitionSet
 import android.view.*
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -20,11 +25,15 @@ import com.shaparapatah.nasaapp.api.ApiBottomActivity
 import com.shaparapatah.nasaapp.api.CoordinatorLayout
 import com.shaparapatah.nasaapp.viewmodel.AppState
 import com.shaparapatah.nasaapp.viewmodel.PictureOfTheDayViewModel
+import kotlinx.android.synthetic.main.activity_animations_enlarge.*
 import kotlinx.android.synthetic.main.fragment_chips.*
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_main.image_view
 
 
 class PictureOfTheDayFragment : Fragment() {
+
+    private var isExpanded = false
 
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
@@ -42,8 +51,8 @@ class PictureOfTheDayFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-         //return inflater.inflate(R.layout.fragment_main, container, false)
-       return inflater.inflate(R.layout.fragment_main_start, container, false)
+        //return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(R.layout.fragment_main_start, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,6 +64,24 @@ class PictureOfTheDayFragment : Fragment() {
             })
         }
         setBottomAppBar(view)
+
+        image_view.setOnClickListener {
+            isExpanded = !isExpanded
+            TransitionManager.beginDelayedTransition(
+                main, TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+            )
+
+            val params: ViewGroup.LayoutParams = image_view.layoutParams
+            params.height = if (isExpanded) ViewGroup.LayoutParams.MATCH_PARENT else
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            image_view.layoutParams = params
+            image_view.scaleType =
+                if (isExpanded) ImageView.ScaleType.CENTER_CROP else
+                    ImageView.ScaleType.FIT_CENTER
+        }
+
 
     }
 
@@ -108,7 +135,7 @@ class PictureOfTheDayFragment : Fragment() {
 
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
-               if (url.isNullOrEmpty()) {
+                if (url.isNullOrEmpty()) {
                     toast("Link is empty")
                 } else {
                     image_view.load(url) {
@@ -131,7 +158,6 @@ class PictureOfTheDayFragment : Fragment() {
             }
         }
     }
-
 
 
     private fun setBottomAppBar(view: View) {
