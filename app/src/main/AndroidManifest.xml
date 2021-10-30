@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NasaApp">
         <activity
-            android:name=".view.animations.ImageTransformActivity"
+            android:name=".view.animations.AnimationsPath"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +23,13 @@
         <activity android:name=".api.ApiActivity" />
         <activity android:name=".api.ApiBottomActivity" />
         <activity android:name=".api.CoordinatorLayout" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".view.animations.AnimationsActivity"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".view.animations.AnimationsActivity" />
+        <activity android:name=".view.animations.ImageTransformActivity" />
 
 
     </application>
 </manifest>
+
+
+
