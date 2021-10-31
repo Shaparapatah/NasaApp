@@ -1,5 +1,6 @@
-package com.shaparapatah.nasaapp.ui
+package com.shaparapatah.nasaapp.view.picture
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.shaparapatah.nasaapp.R
+import com.shaparapatah.nasaapp.api.ApiActivity
+import com.shaparapatah.nasaapp.view.animations.AnimationFAB
+import com.shaparapatah.nasaapp.view.animations.AnimationsActivityBonus
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
@@ -24,10 +28,25 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
 
         navigation_view.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.navigation_one -> Toast.makeText(context, "1", Toast.LENGTH_SHORT).show()
-                R.id.navigation_two -> Toast.makeText(context, "2", Toast.LENGTH_SHORT).show()
+                R.id.navigation_one -> activity?.let {
+                    startActivity(
+                        Intent(
+                            it,
+                            AnimationsActivityBonus::class.java
+                        )
+                    )
+                }
+                R.id.navigation_two -> activity?.let {
+                    startActivity(
+                        Intent(
+                            it,
+                            AnimationFAB::class.java
+                        )
+                    )
+                }
             }
             true
         }
     }
 }
+

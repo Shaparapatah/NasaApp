@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NasaApp">
         <activity
-            android:name=".view.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,5 +20,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".api.ApiActivity" />
+        <activity android:name=".api.ApiBottomActivity" />
+        <activity android:name=".api.CoordinatorLayout" />
+        <activity android:name=".view.animations.AnimationsActivity" />
+        <activity android:name=".view.animations.ImageTransformActivity" />
+        <activity android:name=".view.animations.AnimationsPath" />
+        <activity android:name=".view.animations.AnimationShuffle" />
+        <activity android:name=".view.animations.AnimationFAB" />
+        <activity android:name=".view.animations.AnimationsActivityBonus" />
+
+
     </application>
 </manifest>
+
+
+

@@ -1,8 +1,9 @@
-package com.shaparapatah.nasaapp.view
+package com.shaparapatah.nasaapp
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
-import com.shaparapatah.nasaapp.R
+import com.shaparapatah.nasaapp.view.picture.PictureOfTheDayFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,5 +14,6 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, PictureOfTheDayFragment.newInstance())
                 .commitNow()
         }
+
     }
 }
