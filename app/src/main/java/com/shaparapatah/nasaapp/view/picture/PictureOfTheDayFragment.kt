@@ -64,7 +64,10 @@ class PictureOfTheDayFragment : Fragment() {
             })
         }
         setBottomAppBar(view)
+        animationImage()
+    }
 
+    private fun animationImage() {
         image_view.setOnClickListener {
             isExpanded = !isExpanded
             TransitionManager.beginDelayedTransition(
@@ -81,8 +84,6 @@ class PictureOfTheDayFragment : Fragment() {
                 if (isExpanded) ImageView.ScaleType.CENTER_CROP else
                     ImageView.ScaleType.FIT_CENTER
         }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
