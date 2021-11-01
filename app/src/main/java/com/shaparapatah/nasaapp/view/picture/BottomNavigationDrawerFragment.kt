@@ -11,6 +11,7 @@ import com.shaparapatah.nasaapp.R
 import com.shaparapatah.nasaapp.api.ApiActivity
 import com.shaparapatah.nasaapp.view.animations.AnimationFAB
 import com.shaparapatah.nasaapp.view.animations.AnimationsActivityBonus
+import com.shaparapatah.nasaapp.view.recyclerView.RecyclerActivity
 import kotlinx.android.synthetic.main.bottom_navigation_layout.*
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
@@ -41,6 +42,14 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                         Intent(
                             it,
                             AnimationFAB::class.java
+                        )
+                    )
+                }
+                R.id.navigation_three -> activity?.let {
+                    startActivity(
+                        Intent(
+                            it,
+                            RecyclerActivity::class.java
                         )
                     )
                 }

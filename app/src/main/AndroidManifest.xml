@@ -29,6 +29,7 @@
         <activity android:name=".view.animations.AnimationShuffle" />
         <activity android:name=".view.animations.AnimationFAB" />
         <activity android:name=".view.animations.AnimationsActivityBonus" />
+        <activity android:name=".view.recyclerView.RecyclerActivity" />
 
 
     </application>
