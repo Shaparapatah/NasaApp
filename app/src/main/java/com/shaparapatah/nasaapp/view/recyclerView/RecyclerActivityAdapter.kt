@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.shaparapatah.nasaapp.databinding.ActivityRecyclerItemEarthBinding
+import com.shaparapatah.nasaapp.databinding.ActivityRecyclerItemHeaderBinding
 import com.shaparapatah.nasaapp.databinding.ActivityRecyclerItemMarsBinding
 
 class RecyclerActivityAdapter(
@@ -35,18 +36,19 @@ class RecyclerActivityAdapter(
             }
 
             else -> {
-                val binding: ActivityRecyclerItemMarsBinding =
-                    ActivityRecyclerItemMarsBinding.inflate(
+                val binding: ActivityRecyclerItemHeaderBinding =
+                    ActivityRecyclerItemHeaderBinding.inflate(
                         LayoutInflater.from(parent.context),
                         parent,
                         false
                     )
-                MarsViewHolder(binding.root)
+                HeaderViewHolder(binding.root)
             }
         }
     }
 
     override fun getItemViewType(position: Int): Int {
+        if (position == 0) return TYPE_HEADER
         return if (data[position].someDescription.isNullOrBlank()) TYPE_MARS else TYPE_EARTH
     }
 
@@ -57,6 +59,9 @@ class RecyclerActivityAdapter(
             }
             TYPE_MARS -> {
                 (holder as MarsViewHolder).bind(data[position])
+            }
+            TYPE_HEADER -> {
+                (holder as HeaderViewHolder).bind(data[position])
             }
         }
     }
@@ -88,9 +93,22 @@ class RecyclerActivityAdapter(
 
     }
 
+    inner class HeaderViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        fun bind(data: Data) {
+            ActivityRecyclerItemHeaderBinding.bind(itemView).apply {
+                root.setOnClickListener {
+                    onListItemClickListener.onItemClick(data)
+                }
+            }
+        }
+
+    }
+
+
     companion object {
         private const val TYPE_EARTH = 0
         private const val TYPE_MARS = 1
+        private const val TYPE_HEADER = 2
     }
 
 

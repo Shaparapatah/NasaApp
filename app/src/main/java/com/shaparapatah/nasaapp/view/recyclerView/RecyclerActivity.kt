@@ -18,6 +18,7 @@ class RecyclerActivity : AppCompatActivity() {
 
 
         val data = listOf(
+            Data("Header", ""),
             Data("Earth"),
             Data("Mars", ""),
             Data("Mars", ""),
