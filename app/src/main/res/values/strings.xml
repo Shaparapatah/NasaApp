@@ -20,4 +20,5 @@
     <string name="solar_flare">Solar Flare</string>
     <string name="interesting_information">Полезная информация</string>
     <string name="additional_text">Дополнительный текст</string>
+    <string name="lorem_ipsum">lorem_ipsum</string>
 </resources>
