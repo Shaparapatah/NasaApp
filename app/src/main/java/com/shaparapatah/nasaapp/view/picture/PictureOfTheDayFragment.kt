@@ -133,8 +133,8 @@ class PictureOfTheDayFragment : Fragment() {
                 data.serverResponseData.explanation?.let {
                     binding.includeLayoutTv.textViewForFonts.text = it
                 }
-                binding.includeLayoutTv.textViewForFonts.typeface =
-                    Typeface.createFromAsset(requireContext().assets, "LongFox-o77A.ttf")
+//                binding.includeLayoutTv.textViewForFonts.typeface =
+//                    Typeface.createFromAsset(requireContext().assets, "LongFox-o77A.ttf")
             }
         }
     }
