@@ -14,12 +14,14 @@
         <!-- Customize your theme here. -->
 
         <item name="bottomNavigationStyle">@style/MyBottomNavigationStyle</item>
+        <item name="fontFamily">@font/aclonica</item>
+        <item name="android:fontFamily">@font/aclonica</item>
+
     </style>
 
 
-    <style name="MyBottomNavigationStyle" parent="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface" >
+    <style name="MyBottomNavigationStyle" parent="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface">
 
 
-        
     </style>
 </resources>
