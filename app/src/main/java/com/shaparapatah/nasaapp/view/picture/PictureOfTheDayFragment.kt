@@ -14,6 +14,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -37,6 +38,8 @@ import kotlinx.android.synthetic.main.fragment_main_explanation_text.*
 
 
 class PictureOfTheDayFragment : Fragment() {
+
+    private var isExpanded = false
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
@@ -114,9 +117,29 @@ class PictureOfTheDayFragment : Fragment() {
         }
         bottomSheetBehavior = BottomSheetBehavior.from(binding.includeLayout.bottomSheetContainer)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-
+        animationImage()
 
     }
+
+    private fun animationImage() {
+        image_view.setOnClickListener {
+            isExpanded = !isExpanded
+            TransitionManager.beginDelayedTransition(
+                main, TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+            )
+
+            val params: ViewGroup.LayoutParams = image_view.layoutParams
+            params.height = if (isExpanded) ViewGroup.LayoutParams.MATCH_PARENT else
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            image_view.layoutParams = params
+            image_view.scaleType =
+                if (isExpanded) ImageView.ScaleType.CENTER_CROP else
+                    ImageView.ScaleType.FIT_CENTER
+        }
+    }
+
 
     private fun renderData(data: AppState) {
         when (data) {
@@ -177,3 +200,4 @@ class PictureOfTheDayFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 }
+
