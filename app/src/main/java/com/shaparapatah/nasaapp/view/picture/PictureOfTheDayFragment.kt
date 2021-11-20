@@ -120,8 +120,8 @@ class PictureOfTheDayFragment : Fragment() {
 
     private fun renderData(data: AppState) {
         when (data) {
-            is AppState.Error -> {//TODO HW
-                Toast.makeText(context, "PODData.Error", Toast.LENGTH_LONG).show()
+            is AppState.Error -> {
+                Toast.makeText(context, "AppState error", Toast.LENGTH_LONG).show()
             }
             is AppState.Loading -> {
 
@@ -130,10 +130,11 @@ class PictureOfTheDayFragment : Fragment() {
                 binding.imageView.load(data.serverResponseData.url) {
                     error(R.drawable.ic_load_error_vector)
                 }
-                data.serverResponseData.explanation?.let{
+                data.serverResponseData.explanation?.let {
                     binding.includeLayoutTv.textViewForFonts.text = it
-
                 }
+                binding.includeLayoutTv.textViewForFonts.typeface =
+                    Typeface.createFromAsset(requireContext().assets, "LongFox-o77A.ttf")
             }
         }
     }
@@ -157,7 +158,7 @@ class PictureOfTheDayFragment : Fragment() {
         when (item.itemId) {
             R.id.app_bar_fav -> {
                 Toast.makeText(context, "Favorite", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(context,ApiActivity::class.java))
+                startActivity(Intent(context, ApiActivity::class.java))
             }
 
             R.id.app_bar_change_style -> {
