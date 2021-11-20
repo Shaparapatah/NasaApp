@@ -1,7 +1,6 @@
 package com.shaparapatah.nasaapp
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.shaparapatah.nasaapp.view.picture.PictureOfTheDayFragment
 

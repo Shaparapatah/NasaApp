@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.shaparapatah.nasaapp.R
-import com.shaparapatah.nasaapp.api.ApiActivity
 import com.shaparapatah.nasaapp.view.animations.AnimationFAB
 import com.shaparapatah.nasaapp.view.animations.AnimationsActivityBonus
 import com.shaparapatah.nasaapp.view.recyclerView.RecyclerActivity

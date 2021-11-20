@@ -5,6 +5,9 @@ import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
 import android.transition.ChangeBounds
 import android.transition.ChangeImageTransform
 import android.transition.TransitionManager
@@ -28,6 +31,7 @@ import com.shaparapatah.nasaapp.api.ApiActivity
 import com.shaparapatah.nasaapp.api.ApiBottomActivity
 import com.shaparapatah.nasaapp.api.CoordinatorLayout
 import com.shaparapatah.nasaapp.databinding.FragmentMainBinding
+import com.shaparapatah.nasaapp.databinding.FragmentMainStartBinding
 import com.shaparapatah.nasaapp.viewmodel.AppState
 import com.shaparapatah.nasaapp.viewmodel.PictureOfTheDayViewModel
 import kotlinx.android.synthetic.main.activity_animations_enlarge.*
@@ -43,8 +47,8 @@ class PictureOfTheDayFragment : Fragment() {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
-    private var _binding: FragmentMainBinding? = null
-    val binding: FragmentMainBinding
+    private var _binding: FragmentMainStartBinding? = null
+    val binding: FragmentMainStartBinding
         get() {
             return _binding!!
         }
@@ -61,7 +65,7 @@ class PictureOfTheDayFragment : Fragment() {
     ): View {
 
 
-        _binding = FragmentMainBinding.inflate(inflater)
+        _binding = FragmentMainStartBinding.inflate(inflater)
         setActionBar()
 
         return binding.root
@@ -154,7 +158,17 @@ class PictureOfTheDayFragment : Fragment() {
                     error(R.drawable.ic_load_error_vector)
                 }
                 data.serverResponseData.explanation?.let {
-                    binding.includeLayoutTv.textViewForFonts.text = it
+                    val spannable = SpannableStringBuilder(it)
+
+                    spannable.setSpan(
+                        ForegroundColorSpan(resources.getColor(R.color.colorPrimary)),
+                        0,
+                        spannable.length,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+
+
+                    binding.includeLayoutTv.textViewForFonts.text = spannable
                 }
 //                binding.includeLayoutTv.textViewForFonts.typeface =
 //                    Typeface.createFromAsset(requireContext().assets, "LongFox-o77A.ttf")

@@ -1,7 +1,6 @@
 package com.shaparapatah.nasaapp.view.recyclerView
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.shaparapatah.nasaapp.databinding.ActivityRecyclerBinding
