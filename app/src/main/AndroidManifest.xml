@@ -12,25 +12,71 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NasaApp">
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.NasaApp.SplashScreen">
+            android:name=".view.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".api.ApiActivity" />
-        <activity android:name=".api.ApiBottomActivity" />
-        <activity android:name=".api.CoordinatorLayout" />
-        <activity android:name=".view.animations.AnimationsActivity" />
-        <activity android:name=".view.animations.ImageTransformActivity" />
-        <activity android:name=".view.animations.AnimationsPath" />
-        <activity android:name=".view.animations.AnimationShuffle" />
-        <activity android:name=".view.animations.AnimationFAB" />
-        <activity android:name=".view.animations.AnimationsActivityBonus" />
-        <activity android:name=".view.recyclerView.RecyclerActivity" />
+        <activity
+            android:name=".api.ApiActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".api.ApiBottomActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".api.CoordinatorLayout"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".view.animations.AnimationsActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".view.animations.ImageTransformActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".view.animations.AnimationsPath"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".view.animations.AnimationShuffle"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".view.animations.AnimationFAB"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".view.animations.AnimationsActivityBonus"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".view.recyclerView.RecyclerActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true">
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
