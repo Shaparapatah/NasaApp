@@ -16,4 +16,9 @@
     <color name="color_gray">#66000000</color>
 
 
+    <color name="myColorOne">#FFff4081</color>
+    <color name="myColorSecond">#FF76ff03</color>
+    <color name="myColorHack">#FFfff3e0</color>
+
+
 </resources>

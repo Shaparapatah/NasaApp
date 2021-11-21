@@ -21,7 +21,11 @@
 
 
     <style name="MyBottomNavigationStyle" parent="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface">
-
-
     </style>
+
+
+    <style name="Theme.NasaApp.SplashScreen">
+        <item name="android:windowBackground">@drawable/splash_background_drawable</item>
+    </style>
+
 </resources>
