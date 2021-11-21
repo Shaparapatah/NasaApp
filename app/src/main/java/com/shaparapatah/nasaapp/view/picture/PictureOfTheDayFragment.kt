@@ -166,12 +166,8 @@ class PictureOfTheDayFragment : Fragment() {
                         spannable.length,
                         Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                     )
-
-
                     binding.includeLayoutTv.textViewForFonts.text = spannable
                 }
-//                binding.includeLayoutTv.textViewForFonts.typeface =
-//                    Typeface.createFromAsset(requireContext().assets, "LongFox-o77A.ttf")
             }
         }
     }
